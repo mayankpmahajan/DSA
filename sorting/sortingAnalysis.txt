@@ -1,0 +1,25 @@
+name        best    avg     worst   space   online  stable  inplace
+Bubble      O(n)    O(n2)   O(n2)   O(1)    nah     yes     yes
+Selection   O(n2)   O(n2)   O(n2)   O(1)    nah     nah     yes
+Insertion   O(n)    O(n2)   O(n2)   O(1)    yes     yes     yes
+Merge       O(nlogn)O(nlogn)O(nlogn)O(n)    no      yes     no
+Quick       O(nlogn)O(nlogn)O(n2)   O(1)    no      no      yes
+Heap        O(nlogn)O(nlogn)O(nlogn)O(1)    no      no      yes
+
+
+name            Worst       Average     Best        Space       Stable      Inplace     Online
+Bubble Sort     O(n2)       O(n2)       O(n)        O(1)        Yes         Yes         No
+Selection Sort  O(n2)       O(n2)       O(n2)       O(1)        No          Yes         No
+Insertion Sort  O(n2)       O(n2)       O(n)        O(1)        Yes         Yes         Yes
+Merge Sort      O(nlogn)    O(nlogn)    O(nlogn)    O(n)        Yes         No          No
+Quick Sort      O(nlogn)    O(nlogn)    O(n2)       O(1)        No          Yes         No
+Heap Sort       O(nlogn)    O(nlogn)    O(nlogn)    O(1)        No          Yes         No
+
+
+name        best        average         worst       space           online      stable      inplace
+Bubble      O(n)        O(n2)           O(n2)       O(1)            no          yes         yes
+Selection   O(n2)       O(n2)           O(n2)       O(1)            no          no          yes
+Insertion   O(n)        (n2)            O(n2)       O(1)            yes         yes         yes
+Merge       O(nlogn)    O(nlogn)        O(nlogn)    O(n)            no          yes         no
+Quick       O(nlogn)    O(nlogn)        O(n2)       O(1)            no          no          yes
+Heap        O(nlogn)    O(nlogn)        O(nlogn)    O(1)            no          no          yes

@@ -1,0 +1,24 @@
+To be revised
+1. Selection Sort (theory) III
+2. Bubble Sort (theory + code) III
+3. Insertion Sort (theory + code) III
+4. QuickSort (theory + code) III
+5. sorting analsysis III
+
+
+
+
+
+Test:
+1. Perform bubble sort
+2. Perform selection sort
+3. Perform insertion sort
+4. Perform merge sort
+5. Perform quick sort
+6. sorting analysis
+Score: 60/60
+
+
+
+
+
