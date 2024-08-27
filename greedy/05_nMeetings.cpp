@@ -174,8 +174,40 @@ int maxMeetings(int n, int start[], int end[]) {
 
 
 
+class meet2 {
+public:
+    int start;
+    int end;
+};
+
+bool cmp2(meet2 a, meet2 b) {
+    return a.end < b.end;
+}
 
 
+int maxMeetings2(int n, int start[], int end[]) {
+    vector<meet2> meetings(n);
+
+    for(int i = 0;i<n;i++) {
+        meetings[i].start = start[i];
+        meetings[i].end = end[i];
+    }
+
+    sort(meetings.begin(), meetings.end(), cmp2);
+
+    int ans = 0;
+    int limit = meetings[0].end;
+
+    for(int i = 0;i<n;i++) {
+        if(meetings[i].start > limit) {
+            ans++;
+            limit = meetings[i].end;
+        }
+    }
+
+    return ans;
+
+}
 
 
 

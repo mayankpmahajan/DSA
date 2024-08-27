@@ -35,6 +35,18 @@ float shortestJobFirst(vector<int> jobs) {
     return waitTime / n;
 }
 
+long long solve2(vector<int>& bt) {
+    sort(bt.begin(), bt.end());
+
+    int waitTime =0, totalTime = 0;
+
+    for(int i = 0;i<bt.size();i++) {
+        waitTime+=totalTime;
+        totalTime+=bt[i];
+    }
+    return waitTime/bt.size();
+}
+
 int main() {
     vector<int> jobs = {4, 3, 7, 1, 2};
 
@@ -50,3 +62,27 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

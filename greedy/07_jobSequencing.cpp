@@ -64,7 +64,7 @@ vector<int> JobScheduling1(Job arr[], int n) {
 
     for(int i = 0;i<n;i++) {
         int x = arr[i].dead;
-        while(x>=0) {
+        while(x>0) {
             if(time[x] == -1) {
                 time[x] = 1;
                 ans[0]++;
@@ -78,9 +78,42 @@ vector<int> JobScheduling1(Job arr[], int n) {
     return ans;
 }
 
+bool cmp2(Job a, Job b) {
+    if(a.profit > b.profit) return true;
+    else if(a.profit < b.profit) return true;
+    else if(a.dead < b.dead) return true;
+    return false;
+}
 
+vector<int> JobScheduling2(Job arr[], int n)
+{
+    sort(arr, arr+n, cmp2);
+    int jobCount = 0, profit = 0;
+    int maxi = arr[0].dead;
+    for(int i = 1;i<n;i++) {
+        maxi = max(maxi, arr[i].dead)
+    }
 
+    vector<int> time(maxi + 1, -1);
 
+    for(int i = 0;i<n;i++) {
+        int x = arr[i].dead;
+        while(x>0 && time[x] != -1) {
+            x--;
+        }
+
+        if(x!=0) {
+            time[x] = 1;
+            jobCount++;
+            profit += arr[i].profit;
+        }
+    }
+
+    vector<int> ans;
+    ans.push_back(jobCount);
+    ans.push_back(profit);
+
+}
 
 
 
@@ -99,8 +132,6 @@ int main() {
 
     return 0;
 }
-
-
 
 
 

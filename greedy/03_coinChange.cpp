@@ -80,7 +80,7 @@ int minCoins2(vector<int> &coins, int sum) {
             if(coins[j] <= i) {
                 int sub_res = arr[i - coins[j]];
                 if(sub_res != INT_MAX && sub_res + 1 < arr[i]) {
-                    arr[i] = sub_res;
+                    arr[i] = sub_res + 1;
                 }
             }
         }
@@ -90,6 +90,24 @@ int minCoins2(vector<int> &coins, int sum) {
 }
 
 
+int minCoins3(vector<int> &coins, int sum) {
+
+    vector<int> table(sum+1, INT_MAX);
+    table[0] = 0;
+
+    for(int i = 1;i<table.size();i++) {
+
+        for(int j = 0;j<coins.size();j++) {
+            if(coins[j] <= i) {
+                int sub_res = table[i-coins[j]];
+                if(sub_res !=INT_MAX && sub_res + 1 < table[i]) table[i] = sub_res + 1;
+            }
+        }
+    }
+
+    return table[sum] == INT_MAX ? -1 : table[sum];
+
+}
 
 
 
