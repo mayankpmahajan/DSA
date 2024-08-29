@@ -115,6 +115,42 @@ vector<int> JobScheduling2(Job arr[], int n)
 
 }
 
+bool cmp3(Job a, Job b) {
+    if(a.profit > b.profit) return true;
+    else if(a.profit < b.profit) return false;
+    else if(a.dead < b.dead) return true;
+    return false;
+}
+
+
+vector<int> JobScheduling3(Job arr[], int n)
+{
+    sort(arr, arr+n, cmp3);
+
+    int maxi = arr[0].dead;
+    for(int i = 0;i<n;i++) {
+        maxi = max(maxi, arr[i].dead);
+    }
+
+    vector<int> time(maxi+1, -1);
+    int jobCount = 0, profit = 0;
+
+    for(int i = 0;i<n;i++) {
+        for(int j = arr[i].dead;j>=0;j--) {
+            if(time[j] == -1) {
+                time[j] = 1;
+                jobCount++;
+                profit+= arr[i].profit;
+                break;
+            }
+        }
+        vector<int> ans;
+        ans.push_back(jobCount);
+        ans.push_back(profit);
+        return ans;
+    }
+}
+
 
 
 
@@ -132,9 +168,6 @@ int main() {
 
     return 0;
 }
-
-
-
 
 
 

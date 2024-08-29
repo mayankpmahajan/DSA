@@ -64,9 +64,18 @@ int findPlatform(int arr[], int dep[], int n)
 
 
 
-
-
-
+int findPlatform3(int arr[], int dep[], int n)
+    {
+        int mini = 1;
+    	for(int i = 0;i<n;i++) {
+    	    int count = 0;
+    	    for(int j = 1;j<n;j++) {
+    	        if(arr[i]>= arr[j] && arr[i]<= dep[j] || arr[j]>=arr[i] && arr[j]<= dep[i]) count++;
+    	    }
+    	    mini = min(mini, count);
+    	}
+        return mini;
+    }
 
 
 

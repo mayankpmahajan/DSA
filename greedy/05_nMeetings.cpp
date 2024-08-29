@@ -210,10 +210,40 @@ int maxMeetings2(int n, int start[], int end[]) {
 }
 
 
+class meet3 {
+public:
+    int start;
+    int end;
+};
+
+bool cmp3(meet3 a, meet3 b) {
+    if(a.end < b.end) return true;
+    else if(a.end > b.end) return false;
+    else if(a.start < b.start) return false;
+    return true;
+}
 
 
+int maxMeetings3(int n, int start[], int end[]) {
+    vector<meet3> meetings(n);
+    for(int i = 0;i<n;i++) {
+        meetings[i].start = start[i];
+        meetings[i].end = end[i];
+    }
 
+    int jobCount = 0;
+    sort(meetings.begin(), meetings.end(), cmp3);
+    int limit = meetings[0].end();
 
+    for(int i = 0;i<n;i++) {
+        if(meetings[i].start > limit) {
+            limit= meetings[i].end;
+            jobCount++;
+        }
+    }
+
+    return jobCount;
+}
 
 
 
