@@ -1,1 +1,2 @@
-1. maximum consecutive ones III
+1. maximum consecutive ones 3 I
+2. longest repeating character replacement

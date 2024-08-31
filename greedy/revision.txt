@@ -9,6 +9,7 @@
 9. Job Sequencing Problem (theory + code) III
 10. Candy (theory) III
 11. SJF (theory + code) III
-12. Insert Intervals (theory + code) II
-14. Merge Intervals
-15. Merge Non overlapping intervals
+12. Insert Intervals (theory + code) III
+14. Merge Intervals III
+15. Merge Non overlapping intervals III
+
